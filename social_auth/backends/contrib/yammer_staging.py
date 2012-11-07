@@ -66,7 +66,8 @@ class YammerStagingOAuth2(BaseOAuth2):
             'code': access_token
         }
 
-        url = '%s?%s' % (self.ACCESS_TOKEN_URL, urlencode(params))
+        #url = '%s?%s' % (self.ACCESS_TOKEN_URL, urlencode(params))
+        url = self.ACCESS_TOKEN_URL + '?' + urlencode(params)
 
         try:
             return simplejson.load(dsa_urlopen(url))
