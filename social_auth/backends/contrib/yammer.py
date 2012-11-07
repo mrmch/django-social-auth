@@ -53,7 +53,7 @@ class YammerBackend(OAuthBackend):
 class YammerOAuth2(BaseOAuth2):
     AUTH_BACKEND = YammerBackend
     AUTHORIZATION_URL = YAMMER_AUTH_URL
-    ACCESS_TOKEN_URL = '%s%s' % (YAMMER_OAUTH_URL, 'access_token')
+    ACCESS_TOKEN_URL = '%s%s' % (YAMMER_OAUTH_URL, 'access_token.json')
     REQUEST_TOKEN_URL = '%s%s' % (YAMMER_OAUTH_URL, 'request_token')
 
     SETTINGS_KEY_NAME = 'YAMMER_CONSUMER_KEY'
