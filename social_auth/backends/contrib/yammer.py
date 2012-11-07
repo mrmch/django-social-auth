@@ -61,20 +61,7 @@ class YammerOAuth2(BaseOAuth2):
 
     def user_data(self, access_token, *args, **kwargs):
         """Load user data from yammer"""
-        params = {
-            'client_id': setting(self.SETTINGS_KEY_NAME, ''),
-            'client_secret': setting(self.SETTINGS_SECRET_NAME, ''),
-            'code': access_token
-        }
-
-        #url = '%s?%s' % (self.ACCESS_TOKEN_URL, urlencode(params))
-        url = self.ACCESS_TOKEN_URL + '?' + urlencode(params)
-
-        try:
-            return simplejson.load(dsa_urlopen(url))
-        except Exception, e:
-            logging.exception(e)
-        return None
+        return {}
     
     def auth_complete(self, *args, **kwargs):
         """Yammer API is a little strange"""
